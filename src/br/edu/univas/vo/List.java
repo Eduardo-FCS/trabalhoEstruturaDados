@@ -75,7 +75,7 @@ public class List {
 
 	public String getAsString() {
 		if (head == null) {
-			return "Suas peças acabaram!!!!";
+			return "Esgotaram-se as peças!";
 		}
 		StringBuilder builder = new StringBuilder();
 
@@ -111,56 +111,56 @@ public class List {
 	}
 
 	public Piece getElementAt(int idx) {
-		Node node = getNodeAt(idx);
-		if (node != null) {
-			return node.info;
+		Node node1 = getNodeAt(idx);
+		if (node1 != null) {
+			return node1.info;
 		}
 		return null;
 	}
 
-	public boolean move(List lista, Piece peca) {
+	public boolean moveGame(List list1, Piece piece1) {
 
 		boolean auxiliar = false;
 
-		if (peca != null) {
+		if (piece1 != null) {
 
-			if (lista.head == null) {
-				lista.insert(peca);
+			if (list1.head == null) {
+				list1.insert(piece1);
 				auxiliar = true;
 
-			} else if (head.info.getX() == peca.getX() || head.info.getX() == peca.getY()) {
+			} else if (head.info.getX() == piece1.getX() || head.info.getX() == piece1.getY()) {
 
 				auxiliar = true;
 
-				if (head.info.getX() == peca.getX()) {
-					int aux = peca.getX();
-					int aux2 = peca.getY();
-					peca.setY(aux);
-					peca.setX(aux2);
+				if (head.info.getX() == piece1.getX()) {
+					int aux = piece1.getX();
+					int aux2 = piece1.getY();
+					piece1.setY(aux);
+					piece1.setX(aux2);
 
 				}
-				Node novoNode = new Node();
-				head.previous = novoNode;
-				novoNode.info = peca;
-				novoNode.next = head;
-				head = novoNode;
+				Node newNode = new Node();
+				head.previous = newNode;
+				newNode.info = piece1;
+				newNode.next = head;
+				head = newNode;
 
-			} else if (last.info.getY() == peca.getX() || last.info.getY() == peca.getX()) {
+			} else if (last.info.getY() == piece1.getX() || last.info.getY() == piece1.getY()) {
 
 				auxiliar = true;
 
-				if (last.info.getY() == peca.getY()) {
-					int aux = peca.getX();
-					int aux2 = peca.getY();
-					peca.setY(aux);
-					peca.setX(aux2);
+				if (last.info.getY() == piece1.getY()) {
+					int aux = piece1.getX();
+					int aux2 = piece1.getY();
+					piece1.setY(aux);
+					piece1.setX(aux2);
 
 				}
-				Node novoNode = new Node();
-				last.next = novoNode;
-				novoNode.info = peca;
-				novoNode.previous = last;
-				last = novoNode;
+				Node newNode = new Node();
+				last.next = newNode;
+				newNode.info = piece1;
+				newNode.previous = last;
+				last = newNode;
 
 			} else {
 
@@ -172,7 +172,7 @@ public class List {
 		return auxiliar;
 	}
 
-	public void criaPecas() {
+	public void createPieces() {
 
 		int auxiliar = 0;
 
@@ -180,10 +180,10 @@ public class List {
 
 			for (int j = 0; j + auxiliar < 7; j++) {
 
-				Piece novaPeca = new Piece();
-				novaPeca.setX(i);
-				novaPeca.setY(j + auxiliar);
-				insert(novaPeca);
+				Piece newPiece1 = new Piece();
+				newPiece1.setX(i);
+				newPiece1.setY(j + auxiliar);
+				insert(newPiece1);
 
 			}
 			auxiliar+=1;
@@ -191,26 +191,26 @@ public class List {
 
 	}
 
-	public void distribuiPecas(List lista, List tabuleiro) {
+	public void piecesDividing(List lista, List tabuleiro) {
 
-		Piece peca;
+		Piece piece5;
 
 		int idx = makeList(tabuleiro);
 
 		for (int i = 0; i < 7; i++) {
 			int random = 1 + (int) (Math.random() * idx);
-			peca = getElementAt(random);
-			peca = remove(peca.toString());
-			lista.insert(peca);
+			piece5 = getElementAt(random);
+			piece5 = remove(piece5.toString());
+			lista.insert(piece5);
 			idx-=1;
 		}
 
 	}
 
-	public int makeList(List list) {
+	public int makeList(List list1) {
 
-		Node auxiliar = list.head;
-		Node auxiliar2 = list.last;
+		Node auxiliar = list1.head;
+		Node auxiliar2 = list1.last;
 
 		int aux = 0;
 

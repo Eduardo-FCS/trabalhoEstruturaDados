@@ -18,14 +18,10 @@ public class StartApp {
 		List piecesBOT = new List();
 		List playerPieces = new List();
 		List playedPieces = new List();
-
-		pieces.criaPecas();
-
-		pieces.distribuiPecas(playerPieces, pieces);
-		pieces.distribuiPecas(piecesBOT, pieces);
+		pieces.createPieces();
+		pieces.piecesDividing(playerPieces, pieces);
+		pieces.piecesDividing(piecesBOT, pieces);
 		printing.startGame();
-		int escolha = 0;
-
 		boolean endGame = false;
 
 		do {
@@ -56,7 +52,7 @@ public class StartApp {
 		printing.botTurn();
 
 		boolean finish = false;
-		boolean x = false;
+		boolean auxiliar = false;
 		Piece piece;
 		int number1 = 0;
 		int counter = 0;
@@ -69,9 +65,9 @@ public class StartApp {
 
 				piece = piecesBOT.getElementAt(number1);
 
-				x = playedPieces.move(playedPieces, piece);
+				auxiliar = playedPieces.moveGame(playedPieces, piece);
 
-				if (x == true) {
+				if (auxiliar == true) {
 
 					piece = piecesBOT.remove(piece.toString());
 
@@ -138,9 +134,7 @@ public class StartApp {
 	public static boolean player(List playerPieces, List playedPieces, List pieces) {
 
 		String alertValidation = "As suas peças esgotaram!";
-
 		Piece piece;
-
 		printing.playing();
 
 		boolean gameFinished = false;
@@ -150,11 +144,11 @@ public class StartApp {
 			System.out.println(playerPieces.getAsString());
 			number2 = readInt();
 
-			if (number2 == 7) {
+			if (number2 == 99) {
 				break;
 			}
 
-			else if (number2 == 9) {
+			else if (number2 == 20) {
 
 				buyPiecesPlayer(playerPieces, pieces);
 				continue;
@@ -172,7 +166,7 @@ public class StartApp {
 		}
 
 		piece = playerPieces.getElementAt(number2);
-		boolean y = playedPieces.move(playedPieces, piece);
+		boolean y = playedPieces.moveGame(playedPieces, piece);
 		
 		if (y == true) {
 			piece = playerPieces.remove(piece.toString());

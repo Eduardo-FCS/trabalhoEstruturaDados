@@ -7,7 +7,7 @@ public class Show {
 	}
 
 	public void playing() {
-		System.out.println("\n Rodada do Player\n \n Escolha uma das fichas disponíveis para jogada (Digite 7 para passar a vez e 9 para comprar uma nova ficha): \n");
+		System.out.println("\n Rodada do Player\n \n Escolha uma das fichas disponíveis para jogada (Digite 99 para passar a vez e 20 para comprar uma nova ficha): \n");
 	}
 
 	public void errorChoose() {

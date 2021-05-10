@@ -22,12 +22,12 @@ public class Piece {
 
 	public String toString() {
 		
-		return "(" + x + "," + y + ")";	
+		return "(" + x + " | " + y + ")";	
 		
 	}
 
 	public String toString2() {
-		return "(" + y + "," + x + ")";
+		return "(" + y + " | " + x + ")";
 	}
 
 	
