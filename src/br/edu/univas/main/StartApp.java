@@ -1,11 +1,7 @@
 package br.edu.univas.main;
 
 import java.util.Scanner;
-
-import br.edu.univas.vo.Piece;
-import br.edu.univas.vo.List;
-import br.edu.univas.vo.Node;
-import br.edu.univas.vo.Show;
+import br.edu.univas.vo.*;
 
 public class StartApp {
 
