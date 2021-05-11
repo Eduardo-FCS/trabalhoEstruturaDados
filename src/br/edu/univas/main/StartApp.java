@@ -75,8 +75,9 @@ public class StartApp {
 			int valid = playerPieces.makeList(playerPieces);
 			if (number2 <= valid && number2 >= 0) {
 				break;
-			} else 
+			} else {
 			printing.errorChoose();
+			}
 		}
 
 		piece = playerPieces.getElementAt(number2);
