@@ -64,17 +64,18 @@ public class StartApp {
 			System.out.println(playerPieces.getAsString());
 			number2 = readInt();
 			if (number2 == 99) {
+				printing.playerTurn();
 				break;
-			}
-			else if (number2 == 20) {
+			} else if (number2 == 77) {
 				buyPiecesPlayer(playerPieces, pieces);
+				printing.playerBuyPiece();
 				continue;
 			}
 			number2 -= 1;
 			int valid = playerPieces.makeList(playerPieces);
 			if (number2 <= valid && number2 >= 0) {
 				break;
-			}
+			} else
 			printing.errorChoose();
 		}
 

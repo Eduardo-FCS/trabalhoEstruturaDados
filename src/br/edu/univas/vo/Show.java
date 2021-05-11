@@ -7,7 +7,7 @@ public class Show {
 	}
 
 	public void playing() {
-		System.out.println("\n Rodada do Player\n \n Escolha uma das fichas disponíveis para jogada (Digite 99 para passar a vez e 20 para comprar uma nova ficha): \n");
+		System.out.println("\n \n:::Rodada do Player:::\n \nEscolha uma das fichas disponíveis para jogada (Digite 99 para passar a vez e 77 para comprar uma nova ficha): \n");
 	}
 
 	public void errorChoose() {
@@ -15,26 +15,34 @@ public class Show {
 	}
 	
 	public void botBuyPiece() {
-		System.out.println("\n Bot comprou uma peça \n");
+		System.out.println("\n:::Bot comprou:::\n");
+	}
+	
+	public void playerBuyPiece() {
+		System.out.println("\n:::Player comprou:::\n");
+	}
+	
+	public void playerTurn() {
+		System.out.println("\n:::Player pulou o turno:::");
 	}
 
 	public void botTurn() {
-		System.out.println("\n Rodada do BOT \n");
+		System.out.println("\n:::Rodada do BOT:::\n");
 	}
 
 	public void playedPieces() {
-		System.out.println("\n As peças jogadas na mesa: \n");
+		System.out.println("\n:::Peças em disputa:::\n");
 	}
 	public void playerWin() {
-		System.out.println("\n Player ganhou a partida! \n");
+		System.out.println("\n:::Player ganhou a partida!:::\n");
 	}
 	public void botWin() {
-		System.out.println("\n BOT ganhou a partida! \n");
+		System.out.println("\n:::BOT ganhou a partida!:::\n");
 	}
 	
 	public void botPassedTurn() {
 		
-		System.out.println("\n O BOT passou a vez para você! \n");	
+		System.out.println("\nO:::BOT pulou o turno:::\n");	
 		
 	}
 }
