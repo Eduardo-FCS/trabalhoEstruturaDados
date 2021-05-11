@@ -8,7 +8,7 @@ public class StartApp {
 	public static Scanner scanner = new Scanner(System.in);
 	public static Show printing = new Show();
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		List pieces = new List();
 		List piecesBOT = new List();
 		List playerPieces = new List();
@@ -89,7 +89,7 @@ public class StartApp {
 		return gameFinished;
 	}
 	
-	private static boolean bot(List piecesBOT, List playedPieces, List pieces) throws InterruptedException {
+	private static boolean bot(List piecesBOT, List playedPieces, List pieces) {
 		String alertValidation = "Esgotaram-se as peças!";
 		printing.botTurn();
 		boolean finish = false, auxiliar = false;
