@@ -18,7 +18,7 @@ public class StartApp {
 		pieces.piecesDividing(piecesBOT, pieces);
 		printing.startGame();
 		boolean endGame = false;
-		do {
+		while (endGame == false) {
 			endGame = player(playerPieces, playedPieces, pieces);
 			if (endGame == true) {
 				printing.playerWin();
@@ -29,7 +29,8 @@ public class StartApp {
 				printing.botWin();
 				break;
 			}
-		} while (endGame == false);
+		}
+		scanner.close();
 	}
 
 
