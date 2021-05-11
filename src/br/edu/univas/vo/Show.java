@@ -3,7 +3,7 @@ package br.edu.univas.vo;
 public class Show {
 
 	public void startGame() {
-		System.out.println("====================== \n BEM VINDO AO JOGO DE DOMINÓ VIRTUAL \n \n COMEÇAREMOS A JOGAR !");
+		System.out.println("=============================== \n BEM VINDO AO JOGO DE DOMINÓ VIRTUAL \n =============================== \n COMEÇAREMOS A JOGAR !");
 	}
 
 	public void playing() {
